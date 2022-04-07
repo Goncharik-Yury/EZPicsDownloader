@@ -4,8 +4,10 @@ $(document).on('mousedown', function (e) {
 	e.stopPropagation();
 	e.preventDefault();
 
-	if (e.target.src != undefined) {
-		chrome.runtime.sendMessage(e.target.src);
+	let imageUrl = e.target.src;
+
+	if (imageUrl != undefined) {
+		chrome.runtime.sendMessage(imageUrl);
 	}
 });
 
